@@ -1,0 +1,34 @@
+entities: 
+    1. course
+    2. student
+    3. grade //for students that  declared a cource
+    4. Dependency (course 1 need course 2 to be declared)
+
+    a. accounts (student/teacher/admin)
+
+
+relationships:
+    student <*-1>  Grade  <1-*> course
+    Dependency <->
+
+
+
+course:
+    Integer theoryWeight    //0-100%
+    Integer theoryGradeTime //in years
+
+    Integer labWeight       //0-100%
+    Integer labGradeTime    //in years
+    
+    //constraint theoryWeight + labWeight = 100%
+
+
+
+student:
+
+
+Grade:
+    Boolean set     //if set can't be changed by teacher (inaccessible by student)
+    String state    // declared/givenGrade/set
+    //constraint declared/givenGrade/set
+
