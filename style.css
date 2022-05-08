@@ -1,0 +1,22 @@
+body{
+    background: rgb(190, 190, 190);
+}
+
+#frm{
+    border: solid rgb(64, 64, 64);
+    border-radius: 2px;
+    margin: 120px auto; /*auto -> horiz centering*/
+    background: white;
+    padding: 50px;
+    
+}
+
+#btn{
+    color: rgb(22, 148, 174); 
+    background: #112638;
+    padding: 7px;
+}
+
+#flogin{
+    color: red;
+}
