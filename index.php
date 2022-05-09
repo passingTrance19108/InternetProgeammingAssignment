@@ -1,16 +1,28 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    // last request was more than 30 minutes ago
+    session_unset();     // unset $_SESSION variable for the run-time 
+    session_destroy();   // destroy session data in storage
+}
+$_SESSION['LAST_ACTIVITY'] = time();
+?>
+
 
 <!DOCTYPE html>
 <html>  
 <head>  
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
     <link rel = "stylesheet" type = "text/css" href = "style.css">   
 
     <title>PHP login system</title>  
 	
 </head>  
 <body>  
+<div id="body">
     <div id = "frm" class="col-md-6 sm-3">  
         <h1>Login</h1>  
         <form name="f1" action = "authentication.php" onsubmit = "return validation()" method = "POST">  
@@ -62,6 +74,7 @@
                     }
                 }                             
             }  
-        </script>  
+        </script> 
+</div> 
 </body>     
 </html>  

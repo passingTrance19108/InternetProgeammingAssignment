@@ -3,7 +3,7 @@ body{
 }
 
 #frm{
-    border: solid rgb(64, 64, 64);
+    border: solid rgb(83, 83, 83);
     border-radius: 2px;
     margin: 120px auto; /*auto -> horiz centering*/
     background: white;
@@ -20,3 +20,21 @@ body{
 #flogin{
     color: red;
 }
+
+
+/**************/
+/* Add a black background color to the top navigation */
+.topnav {
+    border-style: solid ;
+    border-width: 2px ;
+    border-color: rgb(95, 95, 111) ;
+    background-color: rgb(40, 43, 216);
+    overflow: hidden;
+    width: 100%;
+}
+
+#navimg{
+    padding: 10px;
+}
+
+/* Style the links inside the navigation bar */

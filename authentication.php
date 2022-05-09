@@ -16,7 +16,9 @@
         $count = mysqli_num_rows($result);  
           
         if($count == 1){  
-            echo "<h1><center> Login successful </center></h1>";  
+            echo "<h1><center> Login successful </center></h1>";
+            $_SESSION['Username'] = $username;  
+            header("Location:MainPage.php");
         }  
         else{  
             echo "<h1> Login failed. Invalid username or password.</h1>";  
