@@ -5,25 +5,26 @@
     $password = $_POST['pass'];  
       
         //to prevent from mysqli injection  
-        $username = stripcslashes($username);  
-        $password = stripcslashes($password);  
-        $username = mysqli_real_escape_string($con, $username);  
-        $password = mysqli_real_escape_string($con, $password);  
-      
-        $sql = "select *from user where login = '$username' and password = PASSWORD('$password')";  
-        $result = mysqli_query($con, $sql);  
+        $sql = "select *from user where login = ? and password = PASSWORD( ? )"; 
+
+        $stmnt = mysqli_prepare($con, $sql);
+        $stmnt->bind_param("ss",$username, $password);
+        $stmnt->execute();
+        
+        $result = $stmnt->get_result();  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
-          
+        
         if($count == 1){  
             echo "<h1><center> Login successful </center></h1>";
             $_SESSION['Username'] = $username;  
+            $_SESSION['Role'] = $row['Role'];
             header("Location:MainPage.php");
         }  
         else{  
             echo "<h1> Login failed. Invalid username or password.</h1>";  
             $_SESSION['login'] = FALSE;
-            sleep(1);
+            //sleep(1);
             header("Location:index.php");
         }     
 ?>  
