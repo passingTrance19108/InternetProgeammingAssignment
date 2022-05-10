@@ -2,7 +2,7 @@
  $host = "localhost";
  $user = "Login";  
  $password = '';  
- $db_name = "formlogintest";  
+ $db_name = "ProAssignBig";  
 
  $con = mysqli_connect($host, $user, $password, $db_name);
  if(mysqli_connect_errno()) {  

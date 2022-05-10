@@ -23,8 +23,11 @@
     <body>
         <div class="nav navbar-expand-md navbar-expand-lg topnav">
             <a id="navimg" href="MainPage.php"><img width="25%" src="photos/icsdlogo.png"></a>
-            <?php echo 'welcome ' . $_SESSION['Username'] ?>
-
+            <div class="text-center"><?php echo 'welcome <br>' . $_SESSION['Username'] ?></div>
+            
+            <!-- The navigation buttons -->
+            
+        
         </div>
     </body>
 </div>
