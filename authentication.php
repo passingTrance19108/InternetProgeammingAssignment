@@ -3,9 +3,10 @@
     include('connection.php');  
     $username = $_POST['user']; 
     $password = $_POST['pass'];  
-      
+    $password = hash('sha256', $password);
+
         //to prevent from mysqli injection  
-        $sql = "select *from user where login = ? and password = PASSWORD( ? )"; 
+        $sql = "select *from user where login = ? and password =  ? "; 
 
         $stmnt = mysqli_prepare($con, $sql);
         $stmnt->bind_param("ss",$username, $password);

@@ -3,6 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
@@ -13,7 +14,7 @@
 <div id="body">
     <div id="frm" class="col-md-6 sm-3">
         <h2 style="text-align: center; padding-bottom: 5px;">Registration page</h1> 
-        <form method="post" action="RegisterForm.php" id="registerForm">
+        <form method="post" action="validateRegistration.php" id="registerForm">
             <p>
                 <label>Email address: </label>
                 <input type="email" class="form-control" name="email" /> 

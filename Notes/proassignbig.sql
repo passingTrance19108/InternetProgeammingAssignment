@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2022 at 04:51 PM
+-- Generation Time: May 11, 2022 at 11:13 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -190,6 +190,7 @@ INSERT INTO `teacher` (`Id`, `name`, `surname`, `rank`) VALUES
 CREATE TABLE `user` (
   `login` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
+  `email` varchar(60) DEFAULT NULL,
   `Id` int(11) NOT NULL,
   `Role` varchar(100) NOT NULL,
   `teacher_id` int(11) DEFAULT NULL,
@@ -200,15 +201,16 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`login`, `password`, `Id`, `Role`, `teacher_id`, `registration_num_id`) VALUES
-('admin', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 1, 'administrator', NULL, NULL),
-('ad', '*DABCF719388B72AD432DE5E88423B56D652DD8B0', 2, 'administrator', NULL, NULL),
-('administr', '*E213118422B2972009A42CCE14794196AD305A14', 3, 'administrator', NULL, NULL),
-('icsd19245', '*A4B6157319038724E3560894F7F932C8886EBFCF', 4, 'student', NULL, '19245'),
-('icsd19108', '*F69A6A09C5AA6936B7769C6BE3AA4BC01796F2A3', 5, 'student', NULL, '19108'),
-('icsdpanagiotissym', '*386E2FC44B6A540B39C76EE7C299944BD39F7EC7', 6, 'Teacher', 1, NULL),
-('icsdcharismes', '*AD5C57943BEA91B987B37F17DD821608D43B1BAB', 7, 'Teacher', 2, NULL),
-('icsdgiorgosster', '*9DDE26D9DB62619DC9D65F5B03B87CA79EC5BFB5', 8, 'Teacher', 3, NULL);
+INSERT INTO `user` (`login`, `password`, `email`, `Id`, `Role`, `teacher_id`, `registration_num_id`) VALUES
+('admin', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', NULL, 1, 'administrator', NULL, NULL),
+('ad', '8a9bcf1e51e812d0af8465a8dbcc9f741064bf0af3b3d08e6b0246437c19f7fb', NULL, 2, 'administrator', NULL, NULL),
+('administr', '16ff58cc7e1b4252f8cb06c0939eee1f9d16824554a81147756a3d522ab789d4', NULL, 3, 'administrator', NULL, NULL),
+('icsd19245', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', NULL, 4, 'student', NULL, '19245'),
+('icsd19108', '4e6979372fe9f33255d774e1510b488f920cbd452daa7053eb05b7f126a9a80e', NULL, 5, 'student', NULL, '19108'),
+('icsdpanagiotissym', '80ca80809c8a4345ec0427d5902c8311d5f6f829c48f82eda26fd7e74c28394a', NULL, 6, 'Teacher', 1, NULL),
+('icsdcharismes', '249ada5d9f8c6717314796bab006b7f45448969273bfd31c7aaf1497ccac3b2e', NULL, 7, 'Teacher', 2, NULL),
+('icsdgiorgosster', '249ada5d9f8c6717314796bab006b7f45448969273bfd31c7aaf1497ccac3b2e', NULL, 8, 'Teacher', 3, NULL),
+('testuser', 'd5cb55480eb0a54adee678c3f60e47a8444d62a1ee6af701a1905154d67a415a', 'test@aegean.gr', 9, 'admin', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -296,7 +298,7 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
