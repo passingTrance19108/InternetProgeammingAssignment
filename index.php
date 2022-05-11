@@ -40,6 +40,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
             <?php if(isset($_SESSION['login'])) {
                 echo "<p id='flogin'>FAILED LOGIN<p>";
             } ?>
+			<a href="" class=" btn" style="color: darkred; text-align:center; background-color: #112638">
+				Register</a>
         </form>  
     </div>  
     
@@ -60,7 +62,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
                         return false;  
                     }   
                     if(id.length>12){
-                        alert("User Name has more than 12 characters")
+                        alert("User Name can not have more than 12 characters")
                         return false;  
                     }
 
@@ -69,9 +71,13 @@ $_SESSION['LAST_ACTIVITY'] = time();
                         return false;  
                     }  
                     if(ps.length>12){
-                        alert("password has more than 12 characters")
+                        alert("password cannot have more than 12 characters")
                         return false;  
                     }
+					if(ps.length<4){
+						alert("password cannot have less than 4 characters")
+                        return false;
+					}
                 }                             
             }  
         </script> 

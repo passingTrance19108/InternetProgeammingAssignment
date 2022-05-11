@@ -5,7 +5,7 @@ body{
 #frm{
     border: solid rgb(83, 83, 83);
     border-radius: 2px;
-    margin: 120px auto; /*auto -> horiz centering*/
+    margin: 100px auto; /*auto -> horiz centering*/
     background: white;
     padding: 50px;
     
