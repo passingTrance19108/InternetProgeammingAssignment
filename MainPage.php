@@ -32,6 +32,18 @@
             
         
         </nav>
+
+        <?php
+            include('student.php'); 
+            $result = getSubjects($_SESSION['Username']);
+            while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+            {
+                $name = $row['subname'];
+                
+                echo $name."<br>";
+            }
+        ?>
+
     </body>
 </div>
 </html>
