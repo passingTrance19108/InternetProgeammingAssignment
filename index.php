@@ -61,8 +61,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
                         alert("User Name is empty");  
                         return false;  
                     }   
-                    if(id.length>12){
-                        alert("User Name can not have more than 12 characters")
+                    if(id.length>22){
+                        alert("User Name can not have more than 22 characters")
                         return false;  
                     }
 
@@ -70,8 +70,8 @@ $_SESSION['LAST_ACTIVITY'] = time();
                         alert("Password field is empty");  
                         return false;  
                     }  
-                    if(ps.length>12){
-                        alert("password cannot have more than 12 characters")
+                    if(ps.length>22){
+                        alert("password cannot have more than 22 characters")
                         return false;  
                     }
 					if(ps.length<4){
