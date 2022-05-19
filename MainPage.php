@@ -10,8 +10,10 @@ include 'header.php'
             while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
             {
                 $name = $row['subname'];
+                $final = $row['final_grade'];
+                $year = $row['yearr'];
                 
-                echo $name."<br>";
+                echo $name." - " . $year . " - " . $final . "<br>";
             }
             echo "<a href='make_statement.php'>Δήλωση μαθήματος</a>";
         }
@@ -22,9 +24,12 @@ include 'header.php'
             while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
             {
                 $name = $row['subname'];
+                $semester = $row['semester'];
+                $year = $row['yearr'];
                 
-                echo $name."<br>";
+                echo $name." - " . $year . " - " . $semester . "<br>";
             }
+            echo "<a href=''>Βαθμολόγηση</a>";
         }
         ?>
 
