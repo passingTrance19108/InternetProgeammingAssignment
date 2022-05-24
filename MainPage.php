@@ -18,18 +18,19 @@ include 'header.php'
             echo "<a href='make_statement.php'>Δήλωση μαθήματος</a>";
         }
         if ($_SESSION['Role'] == 'Teacher') {
-            echo 'Ολα τα μαθήματα:<br>';
+            echo 'Επιλέξτε μάθημα για βαθμολόγηση:<br>';
             include('teacher.php'); 
             $result = getAllSubjects($_SESSION['Username']);
             while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
             {
+                $lecid = $row['lecid'];
                 $name = $row['subname'];
                 $semester = $row['semester'];
                 $year = $row['yearr'];
                 
-                echo $name." - " . $year . " - " . $semester . "<br>";
+                echo "<a href='grade.php?lecid=" . $lecid . "&name=" . $name . "'>".$name." - " . $year . " - " . $semester . "</a><br>";
             }
-            echo "<a href=''>Βαθμολόγηση</a>";
+            
         }
         ?>
 
