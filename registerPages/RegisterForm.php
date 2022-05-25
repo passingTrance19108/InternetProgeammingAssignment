@@ -1,3 +1,7 @@
+<?php 
+    include '../logout'; 
+?> 
+
 <!DOCTYPE html>
 
 <html>
@@ -41,7 +45,7 @@
 
                 <div class="col-12 form-inline">
                 <label class="">Teacher: </label>
-                <input class="form-control col-6 " id="radio_teacher" type="radio" name="Role" value="teacher" />
+                <input class="form-control col-6 " id="radio_teacher" type="radio" name="Role" value="Teacher" />
                 </div>
             </p>
             <p>     

@@ -5,7 +5,12 @@
     $password = $_POST['pass'];  
     $password = hash('sha256', $password);
 
-        //to prevent from mysqli injection  
+
+        //search the username and email user is trying to register with and cancel if it does (post failure to RegisterForm)
+
+
+
+        //Insert User
         $sql = "select *from user where login = ? and password =  ? "; 
 
         $stmnt = mysqli_prepare($con, $sql);
