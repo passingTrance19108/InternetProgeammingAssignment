@@ -1,5 +1,5 @@
 <?php 
-include 'sessionStart.php';
+include 'Components/sessionStart.php';
 ?>
 
 
