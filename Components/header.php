@@ -18,6 +18,7 @@
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
         
         <link rel = "stylesheet" type = "text/css" href = "/style.css">   
+        
         <title><?php echo basename($_SERVER['PHP_SELF'],'.php') ; ?></title>
         
         <!--title icon-->
