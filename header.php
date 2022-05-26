@@ -1,7 +1,6 @@
 <?php 
     include 'sessionStart.php';
 
-    session_start(); 
     if(!isset($_SESSION['Username']))
     {
         header('Location:index.php');
@@ -28,10 +27,10 @@
     </head>
     <body>
         <nav class="nav navbar-collapse navbar-expand-md topnav">
-            <a id="navimg" class="navbar-brand" href="MainPage.php"><img width="25%" src="photos/icsdlogo.png"></a>
+            <a id="navimg" class="navbar-brand" href="/MainPage.php"><img width="25%" src="photos/icsdlogo.png"></a>
             <div class="text-center collapse navbar-collapse"><?php echo 'welcome ' . $_SESSION['Role'] . '<br>' . $_SESSION['Username'] ?></div>
-            <div class="text-center collapse navbar-collapse"><a href="logout.php">logout</a></div>
+            <div class="text-center collapse navbar-collapse"><a href="/logout.php">logout</a></div>
             <!-- The navigation buttons -->
             
-        
+
         </nav>

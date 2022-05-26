@@ -34,7 +34,7 @@ include 'sessionStart.php';
             <?php if(isset($_SESSION['login'])) {
                 echo "<p id='flogin'>FAILED LOGIN<p>";
             } ?>
-			<a href="" class=" btn" style="color: darkred; text-align:center; background-color: #112638">
+			<a href="registerPages/RegisterForm.php" class=" btn" style="color: darkred; text-align:center; background-color: #112638">
 				Register</a>
         </form>  
     </div>  

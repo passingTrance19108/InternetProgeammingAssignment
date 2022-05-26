@@ -1,5 +1,6 @@
 <?php 
-    include '../logout'; 
+    session_start();
+    session_destroy();
 ?> 
 
 <!DOCTYPE html>
@@ -13,6 +14,9 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     
     <link rel = "stylesheet" type = "text/css" href = "../style.css"> 
+    <style>.error{
+        color: red;
+    }</style>
 </head>
 <body>
 <div id="body">
@@ -51,6 +55,11 @@
             <p>     
                 <input type = "submit" class = "form-control " id = "btn" value = "Register" />  
             </p>  
+            <?php
+                if( isset($_POST['register']) ){
+                    echo "<p style='color: red;'>" . $_POST['register'] . "</p>"; 
+                } 
+                ?>
         </form>
 
     </div>        
