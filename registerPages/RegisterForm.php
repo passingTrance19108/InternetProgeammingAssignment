@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    session_destroy();
+?> 
+
 <!DOCTYPE html>
 
 <html>
@@ -9,6 +14,9 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     
     <link rel = "stylesheet" type = "text/css" href = "../style.css"> 
+    <style>.error{
+        color: red;
+    }</style>
 </head>
 <body>
 <div id="body">
@@ -41,12 +49,17 @@
 
                 <div class="col-12 form-inline">
                 <label class="">Teacher: </label>
-                <input class="form-control col-6 " id="radio_teacher" type="radio" name="Role" value="teacher" />
+                <input class="form-control col-6 " id="radio_teacher" type="radio" name="Role" value="Teacher" />
                 </div>
             </p>
             <p>     
                 <input type = "submit" class = "form-control " id = "btn" value = "Register" />  
             </p>  
+            <?php
+                if( isset($_POST['register']) ){
+                    echo "<p style='color: red;'>" . $_POST['register'] . "</p>"; 
+                } 
+                ?>
         </form>
 
     </div>        

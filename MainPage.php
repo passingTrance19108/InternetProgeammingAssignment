@@ -1,5 +1,5 @@
 <?php
-include 'header.php'
+include 'Components/header.php';
 ?>
 
         <?php
@@ -34,6 +34,6 @@ include 'header.php'
         }
         ?>
 
-</body>
 </div>
+</body>
 </html>

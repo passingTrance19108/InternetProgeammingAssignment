@@ -1,5 +1,5 @@
 <?php
-include 'header.php'
+include 'Components/header.php'
 ?>
 
 <?php

@@ -1,11 +1,5 @@
-<?php session_start(); 
-
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-    // last request was more than 30 minutes ago
-    session_unset();     // unset $_SESSION variable for the run-time 
-    session_destroy();   // destroy session data in storage
-}
-$_SESSION['LAST_ACTIVITY'] = time();
+<?php 
+include 'Components/sessionStart.php';
 ?>
 
 
@@ -40,7 +34,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
             <?php if(isset($_SESSION['login'])) {
                 echo "<p id='flogin'>FAILED LOGIN<p>";
             } ?>
-			<a href="" class=" btn" style="color: darkred; text-align:center; background-color: #112638">
+			<a href="registerPages/RegisterForm.php" class=" btn" style="color: darkred; text-align:center; background-color: #112638">
 				Register</a>
         </form>  
     </div>  
