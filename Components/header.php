@@ -17,21 +17,21 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" 
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
         
-        <link rel = "stylesheet" type = "text/css" href = "/style.css">   
+        <link rel = "stylesheet" type = "text/css" href = "style.css">   
         
         <title><?php echo basename($_SERVER['PHP_SELF'],'.php') ; ?></title>
         
         <!--title icon-->
-        <link rel="icon" href="/photos/icsdlogo.png" type="image/icon type">
+        <link rel="icon" href="photos/icsdlogo.png" type="image/icon type">
     </head>
     <body>
     <div id="body" class="">
         <nav class="nav navbar-collapse navbar-expand-md topnav">
-            <a id="navimg" class="navbar-brand" href="/MainPage.php"><img width="25%" src="/photos/icsdlogo.png"></a>
+            <a id="navimg" class="navbar-brand" href="MainPage.php"><img width="25%" src="photos/icsdlogo.png"></a>
             <div class="text-center collapse navbar-collapse"><?php echo 'welcome ' . $_SESSION['Role'] . '<br>' . $_SESSION['Username'] ?></div>
             <div class="text-center collapse navbar-collapse justify-content-end">
-                <a href="/FindAndUpdate/Courses.php" class="btn buttonText">Courses</a>
-                <a href="/logout.php" class="btn buttonText">logout</a>
+                <a href="Courses.php" class="btn buttonText">Courses</a>
+                <a href="logout.php" class="btn buttonText">logout</a>
             </div>
             <!-- The navigation buttons -->
             
