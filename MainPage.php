@@ -32,6 +32,9 @@ include 'Components/header.php';
             }
             
         }
+        if ($_SESSION['Role'] == 'administrator') {
+            echo "<a href='insertSubject.php'>Εισαγωγή μαθήματος</a>";
+        }
         ?>
 
 </div>
