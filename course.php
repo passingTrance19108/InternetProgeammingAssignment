@@ -3,13 +3,20 @@
 
     include('subject.php');
     $subject = get_subject($_GET['id']);
-    echo "<b>Ονομα</b><BR>";
-    echo $subject['name'] . "<BR>";
-    echo "<b>Περιγραφή</b><BR>";
-    echo $subject['description'];
+?>
+    <div class="container">
+<?php
+        
+            echo "<p style='margin-top: 10px;'><b>Ονομα</b>: ".$subject['name']."</p>";
+        ?>
+    <div style="background-color: darkgrey;">
+
+        <?php
+            echo "<b>Περιγραφή</b><BR><br>";
+            echo $subject['description'];
 ?>
 
-
+    </div>
 
 </div>
 </body>
