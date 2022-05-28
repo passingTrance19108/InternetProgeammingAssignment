@@ -36,9 +36,9 @@ include 'Components/header.php'
                 echo "<td><input type='text' name='lab' value='". $lab . "'></td>";
                 echo "<td><input type='text' name='grade' value='" . $grade . "'></td>";
 
-                echo "<input type='hidden' name='staid' value='" . $staid . "'>";
-                echo "<input type='hidden' name='lecid' value='" . $_GET['lecid'] . "'>";
-                echo "<input type='hidden' name='subname' value='" . $_GET['name'] . "'>";
+                echo "    <input type='hidden' name='staid' value='" . $staid . "'>";
+                echo "    <input type='hidden' name='lecid' value='" . $_GET['lecid'] . "'>";
+                echo "    <input type='hidden' name='subname' value='" . $_GET['name'] . "'>";
                 echo "<td><input type='submit' value='Βαθμολόγησε'><br></td>";
 
                 echo "</form>";

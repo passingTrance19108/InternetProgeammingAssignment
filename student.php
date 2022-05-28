@@ -3,7 +3,7 @@
 
         include('connection.php'); 
 
-        $sql = "SELECT sub.name as subname, sta.final_grade as final_grade, lec.year as yearr 
+        $sql = "SELECT sub.name as subname, sta.final_grade as final_grade, lec.year as 'year', sta.lecture_id as lectureID, sta.student_id as studentID
         FROM statement sta, user u, lecture lec, subject sub 
         WHERE u.registration_num_id = sta.student_id and u.login = ? and lec.id = sta.lecture_id and sub.id = lec.subject_id";
 
@@ -79,8 +79,12 @@
         
         $student_id = get_student_id($username);        
         $lecture_id = get_lecture_id($subject_name);
+
+        // $check = "Select * from statement where lecture_id='$lecture_id' AND student_id='$student_id'";
+        // $checkResult = $con->query($check);
+        // if() {return "Already declared";}
         
-        $sql = "INSERT INTO statement (lecture_id, student_id) VALUES ($lecture_id, $student_id)";
+        $sql = "INSERT INTO statement (lecture_id, student_id) VALUES ('$lecture_id', '$student_id')";
         if ($con->query($sql) === TRUE) {
             echo "Το μάθημα " . $subject_name . " δηλώθηκε επιτυχώς.<BR>";
         } else {
