@@ -22,22 +22,13 @@ function showCourses(str) {
 }
 </script>
 
-<div class="container"> <!--  -->
+<div class="container" > <!--  -->
     <div class="text-center "><h2> Courses </h2></div>
-    <input type="text" name="name" oninput="showCourses(this.value)"><BR><BR><BR><BR><BR><BR>
+    <label>Enter course name</label>
+    <input type="text" name="name" oninput="showCourses(this.value)" placeholder="Course"><BR><BR><BR><BR>
     <div id='txtHint'>
-
-    <?php
-    include('subject.php');
-    $result = get_all_subjects();
-    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
-    {    
-        $name = $row['name'];
-        $id = $row['id'];
-        echo "<a href='course.php?id=" . $id . "'>" . $name . "<BR>";
-    }
-    ?>
-
+        
+        
     </div>
 </div>
 
@@ -49,3 +40,9 @@ function showCourses(str) {
 	
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+        showCourses("");
+    })
+</script>
