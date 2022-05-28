@@ -41,4 +41,52 @@ function gradeStudent($stament_id, $lab, $theory, $final_grade) {
     $stmnt->bind_param("dddi",$final_grade,$lab,$theory,$stament_id);
     return $stmnt->execute();
 }
+
+function get_all_teachers() {
+    include('connection.php');
+
+    $sql = "SELECT * FROM teacher";
+
+    $stmnt = mysqli_prepare($con, $sql);
+    $stmnt->execute();
+
+    $result = $stmnt->get_result();  
+    return $result;          
+}
+function set_lecture($subject_id, $teacher_id, $year, $semester, $weight_theory, $weight_lab, $constraint_theory, $constraint_lab) {
+
+    include 'lecture.php';    
+    if (lecture_exists($subject_id, $teacher_id, $year, $semester)) {
+        return False;
+    }
+    include('connection.php');
+    $sql = "insert into 
+    lecture(subject_id, teacher_id, year, semester, weight_theory, weight_lab, theory_constraint, lab_constraint) 
+    values(?, ?, ?, ?, ?, ?, ?, ?)";
+
+    if ($weight_theory == '') {
+        $weight_theory = NULL;
+    }
+    if ($weight_lab == '') {
+        $weight_lab = NULL;
+    }
+    if ($constraint_theory == '') {
+        $constraint_theory = NULL;
+    }
+    if ($constraint_lab == '') {
+        $constraint_lab = NULL;
+    }
+
+    error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+    $stmnt = mysqli_prepare($con, $sql);
+
+    $stmnt->bind_param("iiiiiiii",$subject_id, $teacher_id, $year, $semester, $weight_theory, $weight_lab, $constraint_theory, $constraint_lab);
+
+
+    $stmnt->execute();
+    return True;        
+}
 ?>

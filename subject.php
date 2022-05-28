@@ -44,7 +44,7 @@
     function get_subject($id) {
         include('connection.php'); 
 
-        $sql = "SELECT name, description
+        $sql = "SELECT id, name, description
         from subject 
         where id = ?";
 
@@ -116,6 +116,31 @@
 
         $result = $stmnt->get_result();          
         return $result;
+    }
+
+    function set_subject($id, $name, $description) {
+        include('connection.php');
+
+        if (get_subject_id($name) != NULL and get_subject_id($name) != $id) {
+            return False;
+        }
+
+        $sql= "update subject set name=?, description=? where id=?";
+
+        $stmnt = mysqli_prepare($con, $sql);
+        $stmnt->bind_param("sss",$name,$description,$id);
+        $stmnt->execute();
+        return True;
+    }
+
+    function delete_subject($id) {
+        include('connection.php');
+
+        $sql = "delete from subject where id=?";
+
+        $stmnt = mysqli_prepare($con, $sql);
+        $stmnt->bind_param("s",$id);
+        $stmnt->execute();
     }
 
 ?>
