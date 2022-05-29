@@ -49,10 +49,9 @@ include 'Components/header.php';
                 
                 
             }
-            echo "<a href='make_statement.php'>Δήλωση μαθήματος</a>";
-            
             echo "</tbody></table>";
-
+            
+            echo "<ul class='list-group'><a href='make_statement.php'>Δήλωση μαθήματος</a></ul>";
             
         }
         if ($_SESSION['Role'] == 'Teacher') {
@@ -89,9 +88,12 @@ include 'Components/header.php';
             echo "</table>";
             
         }
-        if ($_SESSION['Role'] == 'administrator') {
-            echo "<a href='insertSubject.php'>Εισαγωγή μαθήματος</a><BR>";
-            echo "<a href='setSubject.php'>Ανάθεση μαθήματος</a><BR>";
+        if ($_SESSION['Role'] == 'administrator') {?>
+            <ul class="list-group" style="margin-top: 5%;">
+             <li class="list-group-item"><a href='insertSubject.php'>Εισαγωγή μαθήματος</a></li>
+             <li class="list-group-item"><a href='setSubject.php'>Ανάθεση μαθήματος</a></li>
+            </ul>
+        <?php    
         }
         echo "</div>";
         ?>
