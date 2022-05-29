@@ -29,7 +29,7 @@
         <nav class="nav navbar-collapse navbar-expand-md topnav">
             <a id="navimg" class="navbar-brand" href="MainPage.php"><img width="25%" src="photos/icsdlogo.png"></a>
             <div class="text-center collapse navbar-collapse"><?php echo "<div style='color: black; font-weight: 600'>welcome: " . $_SESSION['Role'] . '<br>' . $_SESSION['Username'] . "</div>" ?></div>
-            <div class="text-center collapse navbar-collapse justify-content-end">
+            <div class="text-center justify-content-end">
                 <a href="Courses.php" class="btn buttonText">Courses</a>
                 <a href="logout.php" class="btn buttonText">logout</a>
             </div>

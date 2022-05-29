@@ -4,7 +4,9 @@
     include 'connection.php';
     include 'subject.php';
     include 'teacher.php';
-
+?>
+<div id="frm" class="container " style="margin-top: 5%; ">
+<?php
     if (isset($_POST['subject_id'])) {
         $subject_id = $_POST['subject_id'];
         $teacher_id = $_POST['teacher_id'];
@@ -20,8 +22,8 @@
             echo 'Η ανάθεση του μαθήματος δεν έγινε καθώς υπάρχει ήδη.<BR>'; 
         }
     }
-    echo "<form method='post'>";
-    echo "μάθημα:<select name='subject_id'>";
+    echo "<form method='post' >";
+    echo "<div class=''><label>μάθημα: </label><select  class='form-control' name='subject_id'>";
     $result = get_all_subjects(); 
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     {    
@@ -29,9 +31,9 @@
         $id = $row['id'];
         echo "<option value='" . $id . "'>" . $name . "</option>";
     }
-    echo "</select><BR>";
+    echo "</select></div>";
 
-    echo "καθηγητής:<select name='teacher_id'>";
+    echo "<div class=''><label>καθηγητής: </label><select  class='form-control' name='teacher_id'>";
     $result = get_all_teachers(); 
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     {    
@@ -40,29 +42,30 @@
         $id = $row['Id'];
         echo "<option value='" . $id . "'>" .$surname. " ". $name . "</option>";
     }
-    echo "</select><BR>";
+    echo "</select></div>";
 
-    echo "έτος:<select name='year'>"; 
+    echo "<div class=''><label>έτος: </label><select  class='form-control' name='year'>"; 
     for ($i = 2019; $i <= 2022; $i++) {
         echo "<option value='" . $i . "'>" .$i. "</option>";
     }
-    echo "</select><BR>";
+    echo "</select></div>";
 
-    echo "εξάμηνο:<select name='semester'>"; 
+    echo "<div class=''><label>εξάμηνο: </label><select  class='form-control' name='semester'>"; 
     for ($i = 1; $i <= 10; $i++) {
         echo "<option value='" . $i . "'>" .$i. "</option>";
     }
-    echo "</select><BR>";
+    echo "</select></div>";
 
-    echo "βάρος θεωρίας:<input type='text' name='weight_theory'><BR>";
-    echo "βάρος εργαστηρίου:<input type='text' name='weight_lab'><BR>";
-    echo "περιορισμοί θεωρίας:<input type='text' name='constraint_theory'><BR>";
-    echo "περιορισμοί εργαστηρίου:<input type='text' name='constraint_lab'><BR>";
-    echo "<input type='submit' value='Ανάθεση μαθήματος σε καθηγητή'>";
-    echo "</form>";
+    echo "<div class=''><label class=''>βάρος θεωρίας:            </label> <input class='form-control' type='text' name='weight_theory'></div>";
+    echo "<div class=''><label class=''>βάρος εργαστηρίου:        </label> <input class='form-control' type='text' name='weight_lab'></div>";
+    echo "<div class=''><label class=''>περιορισμοί θεωρίας:      </label> <input class='form-control' type='text' name='constraint_theory'></div>";
+    echo "<div class=''><label class=''>περιορισμοί εργαστηρίου:  </label> <input class='form-control' type='text' name='constraint_lab'></div>";
+    echo "<div class=' '><input type='submit' value='Ανάθεση μαθήματος σε καθηγητή' style='margin-top: 5px;'></div>";
+    echo "</form></div>";
 
 ?>
 
 </div>
 </body>
 </html>
+
