@@ -3,7 +3,7 @@ function getAllSubjects($username) {
 
     include('connection.php'); 
 
-    $sql = "SELECT lec.id as lecid, sub.name as subname, lec.year as yearr, lec.semester as semester
+    $sql = "SELECT lec.id as lecid, sub.name as subname, lec.year as yearr, lec.semester as semester, lec.weight_theory as wtheory, lec.weight_lab as wlab
     FROM user u, teacher t, lecture lec, subject sub
     WHERE u.login= ? and t.Id = u.teacher_id and lec.teacher_id = t.Id and lec.subject_id = sub.id";
 
