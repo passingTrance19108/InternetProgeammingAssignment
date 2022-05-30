@@ -1,10 +1,30 @@
 <?php
-include 'Components/header.php'
+include 'Components/header.php';
 ?>
+<script>
+function getcsv(str) {
+    var objXMLHttpRequest = new XMLHttpRequest();
+    objXMLHttpRequest.onreadystatechange = function() {
+        if(objXMLHttpRequest.readyState === 4) {
+            if(objXMLHttpRequest.status === 200) {
+                document.getElementById('my_iframe').src = str+'.csv'; //download
+            } else {
+                alert('Error Code: ' +  objXMLHttpRequest.status);
+                alert('Error Message: ' + objXMLHttpRequest.statusText);
+            }
+        }
+    }
+    objXMLHttpRequest.open("GET","get_csv.php?q="+str,true);
+    objXMLHttpRequest.send();
+    return false;
+}
+</script>
+<iframe id="my_iframe" style="display:none;"></iframe>
 <div class="container">
 
     <?php
-    echo "<p><h6 class='text-center'>". $_GET['name'] ."</h6></p>";
+
+    echo "<p><h6 class='text-center'>". $_GET['name'] ."</h6> <a href='' onclick=\"return getcsv('". $_GET['name'] ."')\">Εξαγωγή βαθμολογίας σε csv.</a></p>";
     include('teacher.php'); 
     $result = getAllStatements($_GET['lecid']);
     ?>
@@ -30,7 +50,7 @@ include 'Components/header.php'
                 
                 echo "<form method='post' action='make_grade.php'>";
 
-                echo "<td>". $surname . "</td> " ;
+                echo "<tr><td>". $surname . "</td> " ;
                 echo "<td>". $name . "</td> " ;
                 echo "<td><input type='text' name='theory' value='" . $theory . "'></td>";
                 echo "<td><input type='text' name='lab' value='". $lab . "'></td>";
@@ -39,7 +59,7 @@ include 'Components/header.php'
                 echo "    <input type='hidden' name='staid' value='" . $staid . "'>";
                 echo "    <input type='hidden' name='lecid' value='" . $_GET['lecid'] . "'>";
                 echo "    <input type='hidden' name='subname' value='" . $_GET['name'] . "'>";
-                echo "<td><input type='submit' value='Βαθμολόγησε'><br></td>";
+                echo "<td><input type='submit' value='Βαθμολόγησε'></td></tr>";
 
                 echo "</form>";
             } 
@@ -52,3 +72,15 @@ include 'Components/header.php'
 </body>
 </div>
 </html>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        showCourses("");
+    })
+</script>

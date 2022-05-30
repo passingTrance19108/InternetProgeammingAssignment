@@ -77,16 +77,26 @@ function set_lecture($subject_id, $teacher_id, $year, $semester, $weight_theory,
         $constraint_lab = NULL;
     }
 
-    error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-
     $stmnt = mysqli_prepare($con, $sql);
 
     $stmnt->bind_param("iiiiiiii",$subject_id, $teacher_id, $year, $semester, $weight_theory, $weight_lab, $constraint_theory, $constraint_lab);
 
-
     $stmnt->execute();
     return True;        
+}
+
+function getAllSubjectStatements($subject_name) {
+    include('connection.php'); 
+
+    $sql = "SELECT stu.surname, stu.name, sta.grade_theory, sta.grade_lab, sta.final_grade
+    from statement sta, lecture lec, subject sub, student stu  
+    where sta.lecture_id = lec.id and lec.subject_id = sub.id and stu.registration_num = sta.student_id and sub.name = ?";
+
+    $stmnt = mysqli_prepare($con, $sql);
+    $stmnt->bind_param("s",$subject_name);
+    $stmnt->execute();
+
+    $result = $stmnt->get_result();  
+    return $result;    
 }
 ?>
