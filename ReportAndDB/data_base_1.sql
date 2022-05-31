@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2022 at 11:13 PM
+-- Generation Time: May 31, 2022 at 10:47 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `proassignbig`
+-- Database: `data base 1`
 --
 
 -- --------------------------------------------------------
@@ -50,11 +50,13 @@ INSERT INTO `lecture` (`id`, `subject_id`, `year`, `semester`, `teacher_id`, `we
 (4, 12, 2022, 6, 3, 70, 30, NULL, NULL),
 (6, 1, 2021, 5, 1, 70, 30, NULL, NULL),
 (7, 11, 2021, 1, 2, 70, 30, NULL, NULL),
-(8, 2, 2022, 8, 1, 70, 30, NULL, NULL),
+(8, 2, 2022, 8, 1, 30, 70, NULL, NULL),
 (9, 10, 2022, 4, 2, 70, 30, NULL, NULL),
-(10, 7, 2021, 9, 2, NULL, NULL, NULL, NULL),
+(10, 7, 2021, 9, 2, 50, 50, NULL, NULL),
 (11, 9, 2021, 7, 2, 60, 40, NULL, NULL),
-(12, 8, 2022, 2, 2, NULL, NULL, NULL, NULL);
+(12, 8, 2022, 2, 2, NULL, NULL, NULL, NULL),
+(13, 1, 2019, 1, 1, 100, 0, NULL, NULL),
+(15, 17, 2019, 1, 1, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -157,7 +159,8 @@ INSERT INTO `subject` (`id`, `name`, `description`) VALUES
 (10, 'Hlektroniki', '\r\n\r\nOi foitites pou oloklironoun epityxos to mathima tha exoun epideixei:\r\n\r\n    Ikanotita na anagnorizoun mi grammika ilektrika stoixeia kai kyklomata, kathos kai na ta analyoun efarmozontas diafores methodous, kai sygkekrimena, analytiki epilysi, grafi- ki analysi, tmimatika grammiki analysi (piecewise linear analysis) kai epayxitiki analysi (incremental analysis).\r\n    Ikanotita na katanooun ta xaraktiristika ton imiagogikon diodon kai na pragmatopoi- oun analysi kyklomaton me diodous efarmozontas ti methodo assumed states.\r\n    Ikanotita na katanooun ti realistiki (mi diakoptiki) symperifora ton MOS Field Effect Transistors (MOSFETs) kai na prosdiorizoun to SU (Switch Unified) montelo gia ayta.\r\n    Ikanotita katanoisis tis leitourgias tou MOSFET san enisxyti, tis ennoias tis polosis tou tranzistor kai pos ayti epitygxanetai, kathos kai tis arxis leitourgias tou tranzistor ston koro.\r\n    Ikanotita na efarmozoun ton katallilo typo analysis (megalou i mikrou simatos) gia ton prosdiorismo tis symperiforas ton enisxyton, analoga me to an oi metaboles ton simaton eisodou einai megales i mikres.\r\n    Ikanotita na katanooun tis basikes arxes ton telestikon enisxyton kai na analyoun apla kyklomata me telestikous enisxytes.\r\n    Ikanotita katanoisis ton basikon arxon tis metatropis analogikou simatos se psifi- ako kai psifiakou simatos se analogiko.\r\n\r\n'),
 (11, 'Domimenos Programmatismos', '\r\n\r\nMe tin epityxi oloklirosi tou mathimatos, o foititis/tria tha:\r\n\r\n    Exei tin gnosi na analyei programmata grammena sti glossa C kai na katannoei ti domi kai ti leitourgia tous.\r\n    Exei tin dexiotita na efarmozei tis arxes tou domimenou programmatismou gia ton entopismo kai ti diorthosi sfalmaton se programmata tis glossas C.\r\n    Exei tin ikanotita na sxediazei kai na anaptyssei programmata se glossa C.\r\n\r\n'),
 (12, 'Asfaleia Pliroforiakon Systimaton', 'Skopos tou mathimatos einai, meta tin oloklirosi ti mathisiakis diadikasias oi foitites kai foititries na exoun katanoisei me plirotita ta themeliodi themata asfaleias pliroforiakon kai epikoinoniakon systimaton kai prostasias tis idiotikotitas, na gnorizoun se bathos themata dioikisis asfaleias pliroforiakon systimaton sto plaisio ton protypon kata ISO 2700X kai na diathetoun basikes gnoseis thematon asfaleias sto Diadiktyo kai stoixeion efarmosmenis kryptografias.\r\n\r\nMe tin epityxi oloklirosi tou mathimatos oi foitites:\r\n\r\n    THa exoun katannoisei basikes ennoies asfaleias kai montela asfaleias.\r\n    THa apoktisoun tin ikanotita efarmogis basikon methodon analysis epikindynotitas kai xrisis kai axiologisis basikis texnologias asfaleias pliroforiakon systimaton.\r\n'),
-(13, 'Asfaleia Diktyon Ypologiston kai Epikoinonion', '\r\n\r\nI parousa didaktiki enotita estiazei se eisagogika themata Asfaleias Kiniton kai Asyrmaton Diktyon Epikoinonion. Analytikotera, oi basikoi ekpaideytikoi stoxoi tou mathimatos einai:\r\n\r\n    H apoktisi kai anaptyxi koultouras asfaleias se periballon kiniton kai asyrmaton diktyon epikoinonion.\r\n    H parousiasi kai analysi ton diaforon katigorion apeilon, ton simeion eypatheias, ton antimetron, kai ton methodon diasfalisis stis simantikoteres texnologies asyrmaton kai kypseloton diktyon epikoinonion.\r\n\r\nSe ayto to plaisio, oi foitites gnorizoun ta basika xaraktiristika asfaleias ton kiniton epikoinonion 2is, 3is kai 4is genias, kathos kai ta antistoixa pou anaptyssontai sta asyrmata diktya IEEE 802.11. I deyteri kyria synistosa tou mathimatos anaferetai stin apaitisi tis Idiotikotitas gia tous xristes ton en logo diktyon. Stoxos einai i gnorimia kai exoikeiosi ton foititon kai foititrion me ti sxetiki orologia kai tis basikes texnologies prostasias tis Idiotikotitas se periballon kiniton kai asyrmaton diktyon epikoinonion. O stoxos ton ergastiriakon efarmogon kai meleton periptosis einai na boithisoun tous foitites na mathoun na xrisimopoioun me beltisto tropo tis parapano texnologies asfaleias kai diafylaxis tis Idiotikotitas se periballon kiniton epikoinonion. O pyrinas ton didaktikon stoxon tis parousas enotitas einai i empedosi diaforetikis koultouras kai antilipsis asfaleias kai idiotikotitas se sxesi me to ensyrmato diktyako periballon. Se aytin tin kateythynsi, oi ergasies tou mathimatos ylopoiountai kanontas xrisi tis platformas Google Android i/kai iOS.\r\n\r\nMe tin epityxi oloklirosi tou mathimatos o foititis/tria tha einai se thesi na:\r\n\r\n    Antilambanetai tin idiaiterotita ton asyrmaton kai kiniton diktyon epikoinonion se sxesi me ta ensyrmata diktya se orous asfaleias kai idiotikotitas.\r\n    Gnorizei tis basikes texnologies asfaleias kai prostasias tis idiotikotitas tou xristi pou parexontai apo ta kypselota diktya epikoinonion kai ta asyrmata diktya texnologias IEEE 802.11.\r\n    Exei katanoisei tous basikous typous epitheseon pou mporoun na efarmostoun stous sygkekrimenous typous diktyon.\r\n    Gnorizei tis basikes arxitektonikes ton diktyon aytou tou typou.\r\n\r\n');
+(13, 'Asfaleia Diktyon Ypologiston kai Epikoinonion', '\r\n\r\nI parousa didaktiki enotita estiazei se eisagogika themata Asfaleias Kiniton kai Asyrmaton Diktyon Epikoinonion. Analytikotera, oi basikoi ekpaideytikoi stoxoi tou mathimatos einai:\r\n\r\n    H apoktisi kai anaptyxi koultouras asfaleias se periballon kiniton kai asyrmaton diktyon epikoinonion.\r\n    H parousiasi kai analysi ton diaforon katigorion apeilon, ton simeion eypatheias, ton antimetron, kai ton methodon diasfalisis stis simantikoteres texnologies asyrmaton kai kypseloton diktyon epikoinonion.\r\n\r\nSe ayto to plaisio, oi foitites gnorizoun ta basika xaraktiristika asfaleias ton kiniton epikoinonion 2is, 3is kai 4is genias, kathos kai ta antistoixa pou anaptyssontai sta asyrmata diktya IEEE 802.11. I deyteri kyria synistosa tou mathimatos anaferetai stin apaitisi tis Idiotikotitas gia tous xristes ton en logo diktyon. Stoxos einai i gnorimia kai exoikeiosi ton foititon kai foititrion me ti sxetiki orologia kai tis basikes texnologies prostasias tis Idiotikotitas se periballon kiniton kai asyrmaton diktyon epikoinonion. O stoxos ton ergastiriakon efarmogon kai meleton periptosis einai na boithisoun tous foitites na mathoun na xrisimopoioun me beltisto tropo tis parapano texnologies asfaleias kai diafylaxis tis Idiotikotitas se periballon kiniton epikoinonion. O pyrinas ton didaktikon stoxon tis parousas enotitas einai i empedosi diaforetikis koultouras kai antilipsis asfaleias kai idiotikotitas se sxesi me to ensyrmato diktyako periballon. Se aytin tin kateythynsi, oi ergasies tou mathimatos ylopoiountai kanontas xrisi tis platformas Google Android i/kai iOS.\r\n\r\nMe tin epityxi oloklirosi tou mathimatos o foititis/tria tha einai se thesi na:\r\n\r\n    Antilambanetai tin idiaiterotita ton asyrmaton kai kiniton diktyon epikoinonion se sxesi me ta ensyrmata diktya se orous asfaleias kai idiotikotitas.\r\n    Gnorizei tis basikes texnologies asfaleias kai prostasias tis idiotikotitas tou xristi pou parexontai apo ta kypselota diktya epikoinonion kai ta asyrmata diktya texnologias IEEE 802.11.\r\n    Exei katanoisei tous basikous typous epitheseon pou mporoun na efarmostoun stous sygkekrimenous typous diktyon.\r\n    Gnorizei tis basikes arxitektonikes ton diktyon aytou tou typou.\r\n\r\n'),
+(17, 'as', 'fduhfsidhfdisuf');
 
 -- --------------------------------------------------------
 
@@ -210,7 +213,8 @@ INSERT INTO `user` (`login`, `password`, `email`, `Id`, `Role`, `teacher_id`, `r
 ('icsdpanagiotissym', '80ca80809c8a4345ec0427d5902c8311d5f6f829c48f82eda26fd7e74c28394a', NULL, 6, 'Teacher', 1, NULL),
 ('icsdcharismes', '249ada5d9f8c6717314796bab006b7f45448969273bfd31c7aaf1497ccac3b2e', NULL, 7, 'Teacher', 2, NULL),
 ('icsdgiorgosster', '249ada5d9f8c6717314796bab006b7f45448969273bfd31c7aaf1497ccac3b2e', NULL, 8, 'Teacher', 3, NULL),
-('testuser', 'd5cb55480eb0a54adee678c3f60e47a8444d62a1ee6af701a1905154d67a415a', 'test@aegean.gr', 9, 'admin', NULL, NULL);
+('testuser', 'd5cb55480eb0a54adee678c3f60e47a8444d62a1ee6af701a1905154d67a415a', 'test@aegean.gr', 9, 'admin', NULL, NULL),
+('kostas lales', '79738a6daa92e18a1354bfb541fb8a2beeb1fbcd0e84c9002508b5e961718de9', 'konstantinoslales@gmail.com', 19, 'student', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -274,19 +278,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `lecture`
 --
 ALTER TABLE `lecture`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `statement`
 --
 ALTER TABLE `statement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `teacher`
@@ -298,7 +302,7 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
