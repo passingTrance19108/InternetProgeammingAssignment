@@ -9,10 +9,13 @@
         }
     }else{//if user is in the login page redirect to main 
         $_SESSION['LAST_ACTIVITY'] = time();
-        if( basename( $_SERVER['PHP_SELF'] ) == 'index.php' && 
-            isset($_SESSION['Role']) && ($_SESSION['Role'] == 'student' || $_SESSION['Role'] == "Teacher")){  
-            header("Location: http://localhost/MainPage.php?v=" . isset($_SESSION['Role']));
+        if( basename( $_SERVER['PHP_SELF'] ) == 'index.php' ){
+            if(isset($_SESSION['Role']) && ($_SESSION['Role'] == 'student' || $_SESSION['Role'] == "Teacher")){  
+                header("Location: http://localhost/MainPage.php?v=" . isset($_SESSION['Role']));
+            }
+            else if ( isset($_SESSION['Role'])  && ($_SESSION['Role'] == 'Guest') ){
+                header("Location: http://localhost/Courses.php");
+            }
         }
-    
     }
 ?>

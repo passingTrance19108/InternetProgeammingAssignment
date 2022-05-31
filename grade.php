@@ -28,6 +28,7 @@ function getcsv(str) {
     include('Components/Functions/teacher.php'); 
     $result = getAllStatements($_GET['lecid']);
     ?>
+    <div class="table-responsive">
     <table class="table table-bordered">
         <thead>
             <th>Surname</th>
@@ -48,18 +49,23 @@ function getcsv(str) {
                 $grade = $row['grade'];
                 $staid = $row['staid'];
                 
+                $dis="";
+                if( $grade){
+                    $dis="disabled='disabled'";
+                };
+                
                 echo "<form method='post' action='make_grade.php'>";
 
                 echo "<tr><td>". $surname . "</td> " ;
                 echo "<td>". $name . "</td> " ;
-                echo "<td><input type='text' name='theory' value='" . $theory . "'></td>";
-                echo "<td><input type='text' name='lab' value='". $lab . "'></td>";
-                echo "<td><input type='text' name='grade' value='" . $grade . "'></td>";
+                echo "<td><input type='text' name='theory' value='" . $theory . "' $dis></td>";
+                echo "<td><input type='text' name='lab' value='". $lab . "' $dis></td>";
+                echo "<td><input type='text' name='grade' value='" . $grade . "' $dis></td>";
 
                 echo "    <input type='hidden' name='staid' value='" . $staid . "'>";
                 echo "    <input type='hidden' name='lecid' value='" . $_GET['lecid'] . "'>";
                 echo "    <input type='hidden' name='subname' value='" . $_GET['name'] . "'>";
-                echo "<td><input type='submit' value='Βαθμολόγησε'></td></tr>";
+                echo "<td><input type='submit' value='Βαθμολόγησε' $dis></td></tr>";
 
                 echo "</form>";
             } 
@@ -68,6 +74,7 @@ function getcsv(str) {
             ?>
         </tbody>
     </table>
+    </div>
 </div>
 </body>
 </div>

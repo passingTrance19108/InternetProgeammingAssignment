@@ -17,7 +17,7 @@ include 'Components/sessionStart.php';
 </head>  
 <body>  
 <div id="body">
-    <div id = "frm" class="col-md-6 sm-3">  
+    <div id = "frm" class="col-md-8 col-lg-5">  
         <h1>Login</h1>  
         <form name="f1" action = "authentication.php" onsubmit = "return validation()" method = "POST">  
             <p>  
@@ -37,6 +37,14 @@ include 'Components/sessionStart.php';
 			<a href="registerPages/RegisterForm.php" class=" btn" style="color: darkred; text-align:center; background-color: #112638">
 				Register</a>
         </form>  
+
+        <!-- guest form -->
+        <form action="authentication.php" method="POST" style="margin-top: 10%;" >
+            <div class="justify-content-end col-9 offset-2">
+                <small></label><input type="submit" name="submit" value="Continue as Guest" class="form-control"></small>
+            </div>
+        </form>
+        
     </div>  
     
     <!--// check for empty fields  -->

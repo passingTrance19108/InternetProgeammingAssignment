@@ -1,6 +1,16 @@
 <?php      
     session_start();
     include('Components/connection.php');  
+
+    if(  isset($_POST['submit']) && $_POST['submit']="Continue as Guest")
+    {
+        $_SESSION['Username'] = uniqid("Guest: ");  
+        $_SESSION['Role'] = "Guest";
+        header("Location:Courses.php");
+        exit;
+    }
+
+
     $username = $_POST['user']; 
     $password = $_POST['pass'];  
     $password = hash('sha256', $password);

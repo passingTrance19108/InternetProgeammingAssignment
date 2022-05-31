@@ -126,7 +126,6 @@ include 'Components/header.php';
 
 
 
-
 <?php //allowing for editing the weights
     if(isset($_SESSION['Role']) && ($_SESSION['Role'] == "Teacher" || ( isset( $_SESSION['mask'] ) && $_SESSION['mask']=="Teacher" ))){
 ?>
@@ -150,7 +149,7 @@ include 'Components/header.php';
                 if(ind == 3){name="id='tweight'"};
                 if(ind == 4){name="id='lweight'"};
                 
-                $(this).html("<input type='text' "+name+" value=' "+data+"'>");
+                $(this).html("<input type='text' "+name+" value=' "+data+"' maxlength='5'>");
                 
             });
 
@@ -187,7 +186,7 @@ include 'Components/header.php';
         theory = $("#tweight").val();
         lab    = $("#lweight").val(); 
         lecID  = $("input[name='lid']",".beingEdited").val();
-        $("body").append("t:"+theory+" lab:"+lab+"|"+lecID+"|");
+        // $("body").append("t:"+theory+" lab:"+lab+"|"+lecID+"|");
 
         message="";
         if( !$.isNumeric(theory) ) message = message +"theory not integer(0-100)\n";
