@@ -1,7 +1,7 @@
 <?php
     include 'Components/header.php';
 
-    include('subject.php');
+    include('Components/Functions/subject.php');
 
 ?>
     <div class="container">

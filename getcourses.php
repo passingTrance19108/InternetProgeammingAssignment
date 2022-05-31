@@ -1,5 +1,5 @@
 <?php
-    include('subject.php');
+    include('Components/Functions/subject.php');
     $result = get_subjects_starting($_GET['q']);
     $responseText = '';
     echo "<table class='table table-bordered'>";

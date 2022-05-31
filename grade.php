@@ -19,13 +19,13 @@ function getcsv(str) {
     return false;
 }
 </script>
-<iframe id="my_iframe" style="display:none;"></iframe>
+<iframe id="my_iframe" style="visibility: hidden;"></iframe>
 <div class="container">
 
     <?php
 
-    echo "<p><h6 class='text-center'>". $_GET['name'] ."</h6> <a href='' onclick=\"return getcsv('". $_GET['name'] ."')\">Εξαγωγή βαθμολογίας σε csv.</a></p>";
-    include('teacher.php'); 
+    echo "<p><h6 class='text-center'>". $_GET['name'] ."</h6> <a id='csv' href='' onclick=\"return getcsv('". $_GET['name'] ."')\">Εξαγωγή βαθμολογίας σε csv.</a></p>";
+    include('Components/Functions/teacher.php'); 
     $result = getAllStatements($_GET['lecid']);
     ?>
     <table class="table table-bordered">
@@ -82,5 +82,11 @@ function getcsv(str) {
 <script>
     $(document).ready(function(){
         showCourses("");
+    })
+
+    $("#csv").click(function(e){
+        e.stopPropagation();
+
+        return getcsv(<?php echo $_GET['name']; ?>);
     })
 </script>

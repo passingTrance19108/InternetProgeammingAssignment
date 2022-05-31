@@ -1,7 +1,7 @@
 <?php
     function getAllSubjects($username) {
 
-        include('connection.php'); 
+        include('Components\connection.php'); 
 
         $sql = "SELECT sub.name as subname, sta.final_grade as final_grade, lec.year as 'year', sta.lecture_id as lectureID, sta.student_id as studentID
         FROM statement sta, user u, lecture lec, subject sub 
@@ -17,7 +17,7 @@
     
     function getSubjects4Statement($username) {
 
-        include('connection.php'); 
+        include('Components/connection.php'); 
 
         $sql = "select sub.name as subname
         from subject sub, user u
@@ -55,7 +55,7 @@
     }
 
     function get_student_id($username) {
-        include('connection.php'); 
+        include('Components/connection.php'); 
 
         $sql = "SELECT stu.registration_num as id
         FROM user u, student stu 
@@ -75,7 +75,7 @@
     }
 
     function make_statement($username, $subject_name) {
-        include('connection.php'); 
+        include('Components/connection.php'); 
         
         $student_id = get_student_id($username);        
         $lecture_id = get_lecture_id($subject_name);

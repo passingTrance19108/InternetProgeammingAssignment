@@ -1,5 +1,5 @@
 <?php 
-    require 'sessionStart.php';
+    require 'Components/sessionStart.php';
 
     if(!isset($_SESSION['Username']))
     {

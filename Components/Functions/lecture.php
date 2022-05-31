@@ -1,7 +1,7 @@
 <?php
 
 function lecture_exists($subject_id, $teacher_id, $year, $semester) {
-    include 'connection.php';
+    include 'Components/connection.php';
 
     $sql ="select * from lecture where subject_id =? and teacher_id =? and year =? and semester =?";
 

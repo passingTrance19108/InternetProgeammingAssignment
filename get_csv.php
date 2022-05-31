@@ -1,5 +1,5 @@
 <?php
-    include('teacher.php');
+    include('Components/Functions/teacher.php');
     
     $result = getAllSubjectStatements($_GET['q']);
 
@@ -10,11 +10,17 @@
     fputcsv($file, ['surname', 'name', 'grade_theory', 'grade_lab', 'final_grade'], $delimiter);
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     {                
-        /*$surname =$row['surname'];
-        $name =$row['name'];
-        $grade_theory =$row['grade_theory'];
-        $grade_lab =$row['grade_lab'];
-        $final_grade =$row['final_grade'];
+        /*  $surname =$row['surname'];
+            $name =$row['name'];
+            $grade_theory =$row['grade_theory'];
+            $grade_lab =$row['grade_lab'];
+            $final_grade =$row['final_grade'];
+
+            echo $surname;
+            echo $name;
+            echo $grade_theory;
+            echo $grade_lab;
+            echo $final_grade;
         */
         fputcsv($file, $row, $delimiter);
     }

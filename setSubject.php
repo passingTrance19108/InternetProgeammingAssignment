@@ -1,9 +1,9 @@
 <?php
     include 'Components/header.php';
 
-    include 'connection.php';
-    include 'subject.php';
-    include 'teacher.php';
+    include 'Components/connection.php';
+    include 'Components/Functions/subject.php';
+    include 'Components/Functions/teacher.php';
 ?>
 <div id="frm" class="container " style="margin-top: 5%; ">
 <?php

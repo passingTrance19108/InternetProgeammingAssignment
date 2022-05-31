@@ -17,7 +17,7 @@ if ($grade == '') {
 }
 if ((is_numeric($lab) or $lab=='') and (is_numeric($grade) or $grade=='') and (is_numeric($theory) or $theory=='')) {
 
-    include 'teacher.php';
+    include 'Components/Functions/teacher.php';
     if (gradeStudent($staid, $lab, $theory, $grade)) {
         echo 'Student has been graded successfully<br>';    
     } else {

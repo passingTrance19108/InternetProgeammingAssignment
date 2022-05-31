@@ -1,6 +1,6 @@
 <?php
     function get_lecture_id($subject_name) {
-        include('connection.php'); 
+        include('Components/connection.php');
 
         $sql = "SELECT lec.id as id
         from lecture lec, subject sub
@@ -21,7 +21,7 @@
     }
 
     function get_subject_id($subject_name) {
-        include('connection.php'); 
+        include('Components/connection.php'); 
 
         $sql = "SELECT sub.id as id
         from subject sub
@@ -42,7 +42,7 @@
     }
 
     function get_subject($id) {
-        include('connection.php'); 
+        include('Components/connection.php'); 
 
         $sql = "SELECT id, name, description
         from subject 
@@ -62,7 +62,7 @@
     }    
 
     function find_subject($name) {
-        include('connection.php');
+        include('Components/connection.php'); 
 
         $sql = "SELECT * FROM subject sub WHERE sub.name = ?";
 
@@ -84,7 +84,7 @@
         }
         $sql = "insert into subject(name,description) values(?, ?)";
 
-        include('connection.php');
+        include('Components/connection.php'); 
         $stmnt = mysqli_prepare($con, $sql);
         $stmnt->bind_param("ss",$name,$description);
         $stmnt->execute();
@@ -92,7 +92,7 @@
     }
 
     function get_all_subjects() {
-        include('connection.php');
+        include('Components/connection.php'); 
 
         $sql = "SELECT * FROM subject";
 
@@ -104,7 +104,7 @@
     }
 
     function get_subjects_starting($name) {
-        include('connection.php');
+        include('Components/connection.php'); 
 
         $name = "$name%";
 
@@ -119,7 +119,7 @@
     }
 
     function set_subject($id, $name, $description) {
-        include('connection.php');
+        include('Components/connection.php'); 
 
         if (get_subject_id($name) != NULL and get_subject_id($name) != $id) {
             return False;
@@ -134,7 +134,7 @@
     }
 
     function delete_subject($id) {
-        include('connection.php');
+        include('Components/connection.php'); 
 
         $sql = "delete from subject where id=?";
 

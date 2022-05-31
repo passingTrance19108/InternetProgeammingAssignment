@@ -1,6 +1,6 @@
 <?php      
     session_start();
-    include('connection.php');  
+    include('Components/connection.php');  
     $username = $_POST['user']; 
     $password = $_POST['pass'];  
     $password = hash('sha256', $password);

@@ -1,7 +1,7 @@
 <?php
 function getAllSubjects($username) {
 
-    include('connection.php'); 
+    include('Components/connection.php'); 
 
     $sql = "SELECT lec.id as lecid, sub.name as subname, lec.year as yearr, lec.semester as semester, lec.weight_theory as wtheory, lec.weight_lab as wlab
     FROM user u, teacher t, lecture lec, subject sub
@@ -16,7 +16,7 @@ function getAllSubjects($username) {
 }
 
 function getAllStatements($lecture_id) {
-    include('connection.php'); 
+    include('Components/connection.php'); 
 
     $sql = "SELECT stu.surname as stusurname, stu.name as stuname, sta.grade_theory as theory, sta.grade_lab as lab, sta.final_grade as grade, sta.id as staid
     from statement sta, student stu 
@@ -32,7 +32,7 @@ function getAllStatements($lecture_id) {
 }
 
 function gradeStudent($stament_id, $lab, $theory, $final_grade) {
-    include('connection.php'); 
+    include('Components/connection.php'); 
     $sql = "UPDATE statement sta
     set sta.final_grade = ?, sta.grade_lab = ?, sta.grade_theory = ?
     where sta.id = ?";
@@ -43,7 +43,7 @@ function gradeStudent($stament_id, $lab, $theory, $final_grade) {
 }
 
 function get_all_teachers() {
-    include('connection.php');
+    include('Components/connection.php');
 
     $sql = "SELECT * FROM teacher";
 
@@ -55,11 +55,11 @@ function get_all_teachers() {
 }
 function set_lecture($subject_id, $teacher_id, $year, $semester, $weight_theory, $weight_lab, $constraint_theory, $constraint_lab) {
 
-    include 'lecture.php';    
+    include 'Components/Functions/lecture.php';    
     if (lecture_exists($subject_id, $teacher_id, $year, $semester)) {
         return False;
     }
-    include('connection.php');
+    include('Components/connection.php');
     $sql = "insert into 
     lecture(subject_id, teacher_id, year, semester, weight_theory, weight_lab, theory_constraint, lab_constraint) 
     values(?, ?, ?, ?, ?, ?, ?, ?)";
@@ -86,7 +86,7 @@ function set_lecture($subject_id, $teacher_id, $year, $semester, $weight_theory,
 }
 
 function getAllSubjectStatements($subject_name) {
-    include('connection.php'); 
+    include('Components/connection.php'); 
 
     $sql = "SELECT stu.surname, stu.name, sta.grade_theory, sta.grade_lab, sta.final_grade
     from statement sta, lecture lec, subject sub, student stu  

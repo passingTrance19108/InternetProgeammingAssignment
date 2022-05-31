@@ -1,8 +1,8 @@
 <?php
 include 'Components/header.php';
 
-include('student.php'); 
-include('subject.php'); 
+include('Components/Functions/student.php'); 
+include('Components/Functions/subject.php'); 
 
 $result = getSubjects4Statement($_SESSION['Username']);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
@@ -14,6 +14,8 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     }
 }
 
+
+echo "<div class='container'>";
 echo '<br>Ολα τα μαθήματα:<br>';
 $result = getSubjects4Statement($_SESSION['Username']);
 echo "<BR><form action='make_statement.php' method='post'>";
@@ -21,10 +23,10 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 {    
     $name = $row['subname'];
     $subject_id = get_subject_id($name);
-    echo "<input type='checkbox' name='".$subject_id."'>".$name."<br>";
+    echo "<div style='border: solid 0.5px;' class='col-6'><input type='checkbox' name='".$subject_id."'>".$name."</div>";
 }
 echo "<button type='submit'>Δήλωση</button>";
-echo "</form>"
+echo "</form></div>"
 ?>
 </body>
 </div>

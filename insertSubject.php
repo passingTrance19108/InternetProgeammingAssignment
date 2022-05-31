@@ -6,7 +6,7 @@ include 'Components/header.php';
 <label class="text-danger">
 <?php
 if (isset($_POST['newSubject']) and trim($_POST['name']) != '') {
-    include 'subject.php';
+    include 'Components/Functions/subject.php';
     if (insert_subject($_POST['name'], $_POST['description'])) {
         echo "Η εισαγωγή του μαθήματος " . $_POST['name'] . " πέτυχε.<BR><BR>";
     } else {
